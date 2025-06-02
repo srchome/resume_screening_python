@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <style>
+    footer {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">Resume Screening App</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('privacy') }}">Privacy</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Notice -->
+  <div class="alert alert-warning text-center rounded-0 mb-4">
+    <strong>Notice:</strong> This is a learning tool. Please make sure to read the Privacy Policy before using this application.
+  </div>
+
+  <!-- Privacy Policy -->
+  <div class="container mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-secondary text-white">
+        <h4 class="mb-0">Privacy Policy</h4>
+      </div>
+      <div class="card-body">
+        <p>This Resume Screening Application is built for educational purposes only.</p>
+
+        <ul>
+          <li><strong>No data is stored:</strong> All uploaded resumes are processed in memory and not saved permanently.</li>
+          <li><strong>No third-party sharing:</strong> Your data is not shared with any external services.</li>
+          <li><strong>Temporary processing:</strong> Resume contents are used only during active screening and discarded afterward.</li>
+          <li><strong>Open source nature:</strong> This app is intended as a learning tool for machine learning and Flask web development.</li>
+        </ul>
+
+        <p>If you do not agree with the terms above, please refrain from using this application.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 border-top text-muted">
+    &copy; 2025 – ResumeScreeningApp – <a href="{{ url_for('privacy') }}">Privacy</a>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

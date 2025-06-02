@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Screening</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <style>
+    footer {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">Resume Screening App</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('privacy') }}">Privacy</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Notice -->
+  <div class="alert alert-warning text-center rounded-0 mb-4">
+    <strong>Notice:</strong> This is a learning tool. Please make sure to read the 
+    <a href="{{ url_for('privacy') }}" class="alert-link">Privacy Policy</a> before using this application.
+  </div>
+
+  <!-- Upload Form -->
+  <div class="container mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Upload Resumes for Screening</h4>
+      </div>
+      <div class="card-body">
+        <form method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="job_title" class="form-label">Job Title</label>
+            <input type="text" class="form-control" id="job_title" name="job_title" required>
+          </div>
+          <div class="mb-3">
+            <label for="job_description" class="form-label">Job Description (Optional)</label>
+            <textarea class="form-control" id="job_description" name="job_description" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="resumes" class="form-label">Upload Resumes (PDF/DOCX)</label>
+            <input class="form-control" type="file" id="resumes" name="resumes" multiple accept=".pdf,.docx" required>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 border-top text-muted">
+    &copy; 2025 – ResumeScreeningApp – <a href="{{ url_for('privacy') }}">Privacy</a>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
