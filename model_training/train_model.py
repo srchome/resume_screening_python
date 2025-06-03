@@ -1,5 +1,6 @@
 # train_model.py
 
+#from data_loader import load_training_data
 from data_loader import load_training_data
 from model_utils import build_model_pipeline, save_model
 from sklearn.model_selection import train_test_split

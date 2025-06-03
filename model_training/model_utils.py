@@ -13,6 +13,7 @@ def extract_resume(x):
 def extract_jobtitle(x):
     return x["JobTitle"]
 
+
 def build_model_pipeline() -> Pipeline:
     resume_pipeline = Pipeline([
         ("extract", FunctionTransformer(extract_resume, validate=False)),
